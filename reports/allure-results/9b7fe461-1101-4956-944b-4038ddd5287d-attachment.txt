@@ -1,0 +1,21 @@
+[32mINFO    [0m LoginPage:login_page.py:28 初始化登录页面
+[32mINFO    [0m LoginPage:login_page.py:28 初始化登录页面
+[32mINFO    [0m LoginPage:login_page.py:117 开始登录流程，用户名: 
+[32mINFO    [0m LoginPage:base_page.py:60 输入文本 '' 到元素: ('id', 'normal_login_account')
+[32mINFO    [0m LoginPage:base_page.py:325 按下Tab键
+[32mINFO    [0m LoginPage:login_page.py:37 输入账号：
+[32mINFO    [0m LoginPage:base_page.py:101 元素可见: ('xpath', '//*[@id="normal_login_account_help"]/div')
+[32mINFO    [0m LoginPage:base_page.py:70 获取文本 '请输入4-50位的账户(用户名)' 从元素: ('xpath', '//*[@id="normal_login_account_help"]/div')
+[32mINFO    [0m LoginPage:login_page.py:50 账号错误验证通过: 请输入4-50位的账户(用户名)
+[32mINFO    [0m LoginPage:base_page.py:60 输入文本 '123456@Aa' 到元素: ('id', 'normal_login_password')
+[32mINFO    [0m LoginPage:base_page.py:325 按下Tab键
+[32mINFO    [0m LoginPage:login_page.py:63 输入密码：123456@Aa
+[32mINFO    [0m LoginPage:base_page.py:104 元素不可见: ('xpath', '//*[@id="normal_login_password_help"]/div')
+[32mINFO    [0m LoginPage:login_page.py:83 密码验证通过，无错误提示
+[32mINFO    [0m LoginPage:base_page.py:60 输入文本 '1234' 到元素: ('id', 'normal_login_code')
+[32mINFO    [0m LoginPage:base_page.py:325 按下Tab键
+[32mINFO    [0m LoginPage:login_page.py:87 输入验证码：1234
+[32mINFO    [0m LoginPage:base_page.py:101 元素可见: ('xpath', '//*[@id="normal_login_code_help"]/div')
+[32mINFO    [0m LoginPage:base_page.py:70 获取文本 '验证码错误' 从元素: ('xpath', '//*[@id="normal_login_code_help"]/div')
+[32mINFO    [0m LoginPage:login_page.py:100 验证码错误验证通过: 验证码错误
+[32mINFO    [0m LoginPage:login_page.py:126 存在期望的错误验证，跳过点击登录按钮
