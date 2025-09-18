@@ -1,0 +1,28 @@
+name: compile
+
+on:
+  pull_request:
+    paths: #当有 pull request，且文件路径包含 Java 文件或者当前的工作流配置文件时触发。
+      - '**.java'
+      - .github/workflows/compile.yml
+jobs:
+  compile: #任务名称
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3 #actions/checkout@v3 是 GitHub Actions 中一个常用的操作（Action），用于从存储库中检出代码。@v3 是指定该 Action 的版本号。在这里，v3 表示使用的是版本 3。
+
+      - name: Set up Java
+        uses: actions/setup-java@v3 #actions/setup-java@v3 操作被用于设置 Java 运行环境
+        with:
+          java-version: '11' # 指定所需的 Java 版本
+          distribution: 'temurin' #'temurin' 表示使用 Temurin（先前称为 AdoptOpenJDK） 的发行版。Temurin 提供了免费的、社区驱动的 OpenJDK 发行版。
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Run JUnit test
+        run: mvn test
+

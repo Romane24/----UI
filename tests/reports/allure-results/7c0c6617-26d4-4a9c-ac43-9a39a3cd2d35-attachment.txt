@@ -1,0 +1,6 @@
+[32mINFO    [0m HostlistPage:hostList_page.py:35 初始化登录页面
+[32mINFO    [0m HostlistPage:hostList_page.py:35 初始化登录页面
+[31m[1mERROR   [0m HostlistPage:base_page.py:35 元素不可点击: ('css selector', '#\\/openusers\\/list > div.ant-card.ant-card-bordered.mt-4.css-rsbjee > div.ant-card-head > div > div.ant-card-extra > button')
+[33mWARNING [0m HostlistPage:base_page.py:50 点击重试 1/2 for ('css selector', '#\\/openusers\\/list > div.ant-card.ant-card-bordered.mt-4.css-rsbjee > div.ant-card-head > div > div.ant-card-extra > button')
+[31m[1mERROR   [0m HostlistPage:base_page.py:35 元素不可点击: ('css selector', '#\\/openusers\\/list > div.ant-card.ant-card-bordered.mt-4.css-rsbjee > div.ant-card-head > div > div.ant-card-extra > button')
+[31m[1mERROR   [0m HostlistPage:base_page.py:48 点击元素失败 after 2 尝试: ('css selector', '#\\/openusers\\/list > div.ant-card.ant-card-bordered.mt-4.css-rsbjee > div.ant-card-head > div > div.ant-card-extra > button')

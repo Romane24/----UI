@@ -1,0 +1,8 @@
+2025-08-28 11:25:55,247 INFO 初始化登录页面
+2025-08-28 11:25:57,631 INFO 初始化登录页面
+2025-08-28 11:26:27,986 ERROR 元素不可点击: ('css selector', '#\\/openusers\\/list > div.ant-card.ant-card-bordered.mt-4.css-rsbjee > div.ant-card-head > div > div.ant-card-extra > button')
+2025-08-28 11:26:27,986 WARNING 点击重试 1/2 for ('css selector', '#\\/openusers\\/list > div.ant-card.ant-card-bordered.mt-4.css-rsbjee > div.ant-card-head > div > div.ant-card-extra > button')
+2025-08-28 11:26:59,379 ERROR 元素不可点击: ('css selector', '#\\/openusers\\/list > div.ant-card.ant-card-bordered.mt-4.css-rsbjee > div.ant-card-head > div > div.ant-card-extra > button')
+2025-08-28 11:26:59,380 ERROR 点击元素失败 after 2 尝试: ('css selector', '#\\/openusers\\/list > div.ant-card.ant-card-bordered.mt-4.css-rsbjee > div.ant-card-head > div > div.ant-card-extra > button')
+2025-08-28 13:03:35,735 INFO 初始化登录页面
+2025-08-28 13:03:54,418 INFO 初始化登录页面

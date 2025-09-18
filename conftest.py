@@ -20,6 +20,12 @@ def login_page(browser):
   page.open()
   return LoginPage(browser)
 
+@pytest.fixture
+def hostList_page(browser):
+  from pages.hostList_page import HostlistPage
+  page = HostlistPage(browser)
+  page.open()
+  return HostlistPage(browser)
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
