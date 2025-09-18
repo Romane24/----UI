@@ -2,45 +2,53 @@ pipeline {
     agent any
     
     stages {
-        stage('Checkout') {
+        stage('Checkout via SSH') {
             steps {
-                echo '✅ 正在拉取代码...'
-                checkout([$class: 'GitSCM', 
-                         branches: [[name: 'main']],
-                         userRemoteConfigs: [[url: 'https://github.com/Romane24/----UI.git']]
-                ])
+                echo '🚀 使用SSH协议拉取代码...'
+                retry(3) {
+                    git branch: 'main',
+                       url: 'git@github.com:Romane24/----UI.git',
+                       credentialsId: 'github-ssh-key',
+                       timeout: 10
+                }
             }
         }
         
         stage('Setup Environment') {
             steps {
-                echo '✅ 正在安装依赖...'
+                echo '✅ 设置测试环境...'
                 sh '''
-                    echo "当前目录:"
-                    pwd
-                    ls -la
-                    pip install -r requirements.txt || echo "没有requirements.txt文件"
+                    echo "安装依赖..."
+                    pip install -r requirements.txt || echo "没有requirements.txt"
+                    
+                    echo "环境信息:"
+                    python --version
+                    pip --version
                 '''
             }
         }
         
         stage('Run Tests') {
             steps {
-                echo '✅ 正在运行测试...'
-                sh '''
-                    echo "当前Python版本:"
-                    python --version || echo "Python未安装"
-                    echo "运行测试..."
-                    python -m pytest tests/ -v || echo "测试完成"
-                '''
+                echo '✅ 运行自动化测试...'
+                sh 'python -m pytest tests/ --html=report.html || true'
+            }
+            post {
+                always {
+                    publishHTML(target: [
+                        allowMissing: true,
+                        reportDir: '.',
+                        reportFiles: 'report.html',
+                        reportName: '测试报告'
+                    ])
+                }
             }
         }
     }
     
     post {
         always {
-            echo '🎯 自动化测试流程执行完成'
-            sh 'ls -la'  // 查看最终工作目录内容
+            echo '🎯 构建完成'
         }
     }
 }
